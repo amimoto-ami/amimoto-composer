@@ -1,0 +1,50 @@
+{
+  "name": "amimoto-composer",
+  "type": "project",
+  "license": "MIT",
+  "description": "AMIMOTO Composer file",
+  "homepage": "https://amimoto-ami.com",
+  "authors": [
+    {
+      "name": "Daniel Olson",
+      "email": "emaildano@gmail.com",
+      "homepage": "https://github.com/emaildano"
+    }
+  ],
+  "keywords": [
+    "wordpress", "stack", "composer", "theme", "wp"
+  ],
+  "support": {
+    "issues": "https://amimoto-ami.com/support"
+  },
+  "config": {
+    "preferred-install": "dist",
+    "vendor-dir": "lib/vendor/"
+  },
+  "scripts": {
+    "pre-update-cmd": [
+      "php -r \"if(!file_exists('wp-config.php')) { copy('lib/config/wp-config.php', 'wp-config.php'); }\"",
+      "php -r \"if(!file_exists('local-config.php')) { copy('lib/config/local-config.php', 'local-config.php'); }\""
+    ]
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require": {
+    "php": ">=5.4",
+    "johnpbloch/wordpress": "4.7.5",
+    "composer/installers": "1.3.0",
+    "wpackagist-plugin/amimoto-dashboard": "0.4.1"
+  },
+  "extra": {
+    "installer-paths": {
+      "./wordpress/wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "./wordpress/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+      "./wordpress/wp-content/themes/": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": "./wordpress/"
+  }
+}
