@@ -23,6 +23,7 @@
   },
   "scripts": {
     "pre-update-cmd": [
+      "php -r \"if(!file_exists('.env')) { copy('lib/config/env-sample', '.env'); }\"",
       "php -r \"if(!file_exists('wp-config.php')) { copy('lib/config/wp-config-sample.php', 'wp-config.php'); }\"",
       "php -r \"if(!file_exists('local-config.php')) { copy('lib/config/local-config-sample.php', 'local-config.php'); }\""
     ]
