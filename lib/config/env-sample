@@ -8,7 +8,7 @@ DB_PASSWORD=database_password
 
 WP_ENV=development
 WP_HOME=http://example.com
-WP_SITEURL=${WP_HOME}/wp
+WP_SITEURL=${WP_HOME}
 
 AUTH_KEY='generateme'
 SECURE_AUTH_KEY='generateme'
