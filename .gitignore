@@ -9,3 +9,4 @@ composer.lock
 
 # Apollo Config
 wp-config.php
+local-config.php
