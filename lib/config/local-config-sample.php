@@ -8,6 +8,7 @@ if ( file_exists('/opt/aws/cloud_formation.json') ) {
                 $db_data['host'] = $db_data['endpoint'] . ':' . $db_data['port'];
         }
 }
+
 if ( !$db_data ) {
         $db_data = array(
                 'database' => '<%= @db_name %>',

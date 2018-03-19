@@ -11,9 +11,7 @@
       "homepage": "https://github.com/emaildano"
     }
   ],
-  "keywords": [
-    "wordpress", "stack", "composer", "wp"
-  ],
+  "keywords": ["wordpress", "stack", "composer", "wp"],
   "support": {
     "issues": "https://github.com/amimoto-ami/amimoto-composer/issues"
   },
@@ -23,34 +21,37 @@
   },
   "scripts": {
     "pre-update-cmd": [
-      "php -r \"if(!file_exists('.env')) { copy('lib/config/env-sample', '.env'); }\"",
-      "php -r \"if(!file_exists('wp-config.php')) { copy('lib/config/wp-config-sample.php', 'wp-config.php'); }\"",
-      "php -r \"if(!file_exists('local-config.php')) { copy('lib/config/local-config-sample.php', 'local-config.php'); }\""
+      "php -r \"if(!file_exists('wordpress/wp-config.php')) { copy('lib/config/wp-config-sample.php', 'wordpress/wp-config.php'); }\"",
+      "php -r \"if(!file_exists('wordpress/local-config.php')) { copy('lib/config/local-config-sample.php', 'wordpress/local-config.php'); }\""
     ]
   },
   "repositories": [
     {
       "type": "composer",
       "url": "https://wpackagist.org"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "amimoto-ami/disable-vaultpress-firewall",
+        "version": "1.0.0",
+        "type": "wordpress-muplugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://github.com/amimoto-ami/disable-vaultpress-firewall/archive/1.0.0.zip"
+        }
+      }
     }
   ],
   "require": {
     "php": ">=5.4",
-    "johnpbloch/wordpress": "4.7.5",
+    "johnpbloch/wordpress": "4.7.*",
     "composer/installers": "1.3.0",
     "wpackagist-plugin/nginx-champuru": "dev-trunk",
     "wpackagist-plugin/nginx-mobile-theme": "dev-trunk",
-    "wpackagist-plugin/nephila-clavata": "dev-trunk",
     "wpackagist-plugin/c3-cloudfront-clear-cache": "dev-trunk",
-    "wpackagist-plugin/debug-bar": "dev-trunk",
-    "wpackagist-plugin/debug-bar-extender": "dev-trunk",
-    "wpackagist-plugin/debug-bar-console": "dev-trunk",
-    "wpackagist-plugin/login-lockdown": "dev-trunk",
-    "wpackagist-plugin/rublon": "dev-trunk",
-    "wpackagist-plugin/flamingo": "dev-trunk",
-    "wpackagist-plugin/contact-form-7": "dev-trunk",
-    "wpackagist-plugin/simple-ga-ranking": "dev-trunk",
-    "wpackagist-plugin/amimoto-dashboard": "dev-trunk"
+    "wpackagist-plugin/amimoto-dashboard": "dev-trunk",
+    "amimoto-ami/disable-vaultpress-firewall": "1.0.0"
   },
   "extra": {
     "installer-paths": {

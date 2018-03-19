@@ -1,11 +1,25 @@
-# WordPress
+# AMIMOTO
 wordpress/*
-.htaccess
-wp-config.php
-local-config.php
-.env
-
-# Vendor (e.g. Composer)
+wordpress/local-config.php
 lib/vendor/*
 !vendor/.gitkeep
 composer.lock
+
+*.log
+wordpress/wp-config.php
+wordpress/wp-content/advanced-cache.php
+wordpress/wp-content/backup-db/
+wordpress/wp-content/backups/
+wordpress/wp-content/blogs.dir/
+wordpress/wp-content/cache/
+wordpress/wp-content/upgrade/
+wordpress/wp-content/uploads/
+wordpress/wp-content/mu-plugins/
+wordpress/wp-content/wp-cache-config.php
+wordpress/wp-content/plugins/hello.php
+
+wordpress/.htaccess
+wordpress/license.txt
+wordpress/readme.html
+wordpress/sitemap.xml
+wordpress/sitemap.xml.gz
