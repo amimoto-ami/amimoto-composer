@@ -1,5 +1,6 @@
 # AMIMOTO
 wordpress/*
+!wordpress/wp-content/uploads/
 wordpress/local-config.php
 lib/vendor/*
 !vendor/.gitkeep
